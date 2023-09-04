@@ -1,4 +1,7 @@
-.App{
-  width: 100vw;
-  height: 100vw;
+body{
+  background-color: #f1f1f1;
+}
+
+#three-canvas-container{
+  height: 100vh !important;
 }
