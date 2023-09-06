@@ -46,10 +46,13 @@
 
 // export default Experience;
 
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Float, MeshReflectorMaterial, PresentationControls } from '@react-three/drei';
+import { useLoader } from '@react-three/fiber'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 
 const Experience = () => {
+    const gltf = useLoader(GLTFLoader, "./models/chair.gltf")
     return (
         <>
         <PresentationControls
@@ -59,22 +62,24 @@ const Experience = () => {
             polar={[-0.1, Math.PI / 4]}
             rotation={[Math.PI / 8, Math.PI / 4, 0]}
          >
-          <Float
+          {/* <Float
           speed={1}
           rotationIntensity={1}
           floatIntensity={1}
           floatingRange={[0,1]}
           
-          >
-              
+          > */}
+            <Suspense fallback={null}>
+            <primitive object={gltf.scene}/>
+        </Suspense>  
         <mesh>
             {/* <sphereGeometry args={[1,32,32]}/>
             <meshStandardMaterial color="#ffffff"/> */}
-            <boxGeometry />
-            <meshNormalMaterial />
+            {/* <boxGeometry />
+            <meshNormalMaterial /> */}
         </mesh>
-        </Float>
-        <MeshReflectorMaterial
+        {/* </Float> */}
+        {/* <MeshReflectorMaterial
             blur={[300, 100]}
             resolution={2048}
             mixBlur={1}
@@ -85,7 +90,7 @@ const Experience = () => {
             maxDepthThreshold={1.4}
             color="#101010"
             metalness={0.5}
-          />
+          /> */}
 
         </PresentationControls>
         <ambientLight args={["#ffffff" ,1]}/>
