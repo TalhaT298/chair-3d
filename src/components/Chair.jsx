@@ -9,7 +9,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 const Chair =(props) =>{
-  const { nodes, materials } = useGLTF('/chair.gltf')
+  const { nodes, materials } = useGLTF('./models/chair.gltf')
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Chair.geometry} material={materials.Chair} />
@@ -20,6 +20,6 @@ const Chair =(props) =>{
   )
 }
 
-useGLTF.preload('/chair.gltf')
+useGLTF.preload('./models/chair.gltf')
 
 export default Chair;
