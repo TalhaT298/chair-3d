@@ -9,6 +9,8 @@ function App() {
   return (
     
       <Canvas id="three-canvas-container">
+       
+        {/* <color attach="background" args={["#213547"]}/> */}
         <Suspense fallback={null}>
         <Experience/>
         </Suspense>
