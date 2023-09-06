@@ -8,7 +8,7 @@ Command: npx gltfjsx@6.2.13 public/models/chair.gltf
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
-export function Model(props) {
+const Chair =(props) =>{
   const { nodes, materials } = useGLTF('/chair.gltf')
   return (
     <group {...props} dispose={null}>
@@ -21,3 +21,5 @@ export function Model(props) {
 }
 
 useGLTF.preload('/chair.gltf')
+
+export default Chair;
