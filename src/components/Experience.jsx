@@ -49,10 +49,11 @@
 import React, { Suspense } from 'react';
 import { Float, MeshReflectorMaterial, PresentationControls } from '@react-three/drei';
 import { useLoader } from '@react-three/fiber'
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+import Chair from './Chair';
+
 
 const Experience = () => {
-    const gltf = useLoader(GLTFLoader, "./models/chair.gltf")
+   
     return (
         <>
         <PresentationControls
@@ -70,7 +71,7 @@ const Experience = () => {
           
           > */}
             <Suspense fallback={null}>
-            <primitive object={gltf.scene}/>
+            <Chair/>
         </Suspense>  
         <mesh>
             {/* <sphereGeometry args={[1,32,32]}/>
