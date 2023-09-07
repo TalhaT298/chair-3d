@@ -22,7 +22,11 @@ const Chair =(props) =>{
   leatherTextureProps.normalMap.repeat.set(3,3);
   leatherTextureProps.roughnessMap.repeat.set(3,3);
   leatherTextureProps.aoMap.repeat.set(3,3);
+
+  leatherTextureProps.map.wrapS = leatherTextureProps.map.wrapT =
   leatherTextureProps.normalMap.wrapS = leatherTextureProps.normalMap.wrapT =
+  leatherTextureProps.roughnessMap.wrapS = leatherTextureProps.roughnessMap.wrapT =
+  leatherTextureProps.aoMap.wrapS = leatherTextureProps.aoMap.wrapT =
   THREE.MirroredRepeatWrapping;
   return (
     <group {...props} dispose={null}>
