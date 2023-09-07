@@ -70,9 +70,9 @@ const Experience = () => {
           floatingRange={[0,1]}
           
           > */}
-            <Suspense fallback={null}>
+            {/* <Suspense fallback={null}> */}
             <Chair/>
-        </Suspense>  
+        {/* </Suspense>   */}
         <mesh>
             {/* <sphereGeometry args={[1,32,32]}/>
             <meshStandardMaterial color="#ffffff"/> */}
