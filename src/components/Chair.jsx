@@ -7,6 +7,7 @@ Command: npx gltfjsx@6.2.13 public/models/chair.gltf
 
 import React, { useRef } from 'react'
 import { useGLTF,useTexture } from '@react-three/drei'
+import * as THREE from "three"
 
 const Chair =(props) =>{
   const { nodes, materials } = useGLTF('./models/chair.gltf')
@@ -15,7 +16,14 @@ const Chair =(props) =>{
     normalMap: "./textures/leather/Leather_008_Normal.jpg",
     roughnessMap: "./textures/leather/Leather_008_Roughness.jpg",
     aoMap: "./textures/leather/Leather_008_Ambient Occlusion.jpg",
-  })
+  });
+
+  leatherTextureProps.map.repeat.set(3,3);
+  leatherTextureProps.normalMap.repeat.set(3,3);
+  leatherTextureProps.roughnessMap.repeat.set(3,3);
+  leatherTextureProps.aoMap.repeat.set(3,3);
+  leatherTextureProps.normalMap.wrapS = leatherTextureProps.normalMap.wrapT =
+  THREE.MirroredRepeatWrapping;
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Chair.geometry} >
