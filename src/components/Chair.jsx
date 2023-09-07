@@ -6,10 +6,16 @@ Command: npx gltfjsx@6.2.13 public/models/chair.gltf
 */
 
 import React, { useRef } from 'react'
-import { useGLTF } from '@react-three/drei'
+import { useGLTF,useTexture } from '@react-three/drei'
 
 const Chair =(props) =>{
   const { nodes, materials } = useGLTF('./models/chair.gltf')
+  const leatherTextureProps = useTexture({
+    map:  "./textures/leather/Leather_008_Normal.jpg",
+    normalMap: "./textures/leather/Leather_008_Normal.jpg",
+    roughnessMap: "./textures/leather/Leather_008_Roughness.jpg",
+    aoMap: "./textures/leather/Leather_008_Ambient Occlusion.jpg",
+  })
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Chair.geometry} material={materials.Chair} />
