@@ -4,6 +4,7 @@ import React from 'react';
 const Configurator = () => {
     return (
         <div className='configurator'>
+            Hello
             
         </div>
     );
