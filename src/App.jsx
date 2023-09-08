@@ -15,8 +15,9 @@ function App() {
     <CustomizationProvider>
      <div className='App'>
        <Canvas id="three-canvas-container">
-       <color attach="background" args={["#262b2e"]} />
-        <fog attach="fog" args={["#262b2e", 10, 20]} />
+       <color attach="background" args={["#9fa3a6"]} />
+        <fog attach="fog" args={["#9fa3a6", 10, 20]} />
+        {/* <fog attach="fog" args={["#262b2e", 10, 20]} /> */}
         <Suspense fallback={null}>
         <Experience/>
         </Suspense>
