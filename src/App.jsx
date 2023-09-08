@@ -5,12 +5,14 @@ import Experience from './components/Experience'
 
 import { Suspense } from 'react';
 import Configurator from './components/Configurator';
+import { CustomizationProvider } from './contexts/Customization';
+
 
 
 function App() {
 
   return (
-    
+    <CustomizationProvider>
      <div className='App'>
        <Canvas id="three-canvas-container">
        <color attach="background" args={["#262b2e"]} />
@@ -21,6 +23,7 @@ function App() {
       </Canvas>
       <Configurator/>
      </div>
+     </CustomizationProvider>
       
       
     
