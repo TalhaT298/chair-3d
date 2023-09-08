@@ -11,8 +11,8 @@ function App() {
     
       <Canvas id="three-canvas-container">
        
-       <color attach="background" args={["#213547"]} />
-        <fog attach="fog" args={["#213547", 10, 20]} />
+       <color attach="background" args={["#262b2e"]} />
+        <fog attach="fog" args={["#262b2e", 10, 20]} />
         <Suspense fallback={null}>
         <Experience/>
         </Suspense>
