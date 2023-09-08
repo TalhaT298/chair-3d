@@ -20,3 +20,10 @@ body{
   flex-direction: column;
   gap: 16px;
 }
+
+.configurator__section__title {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
