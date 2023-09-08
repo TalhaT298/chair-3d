@@ -2,6 +2,7 @@
 import { Canvas } from '@react-three/fiber'
 import './App.css'
 import Experience from './components/Experience'
+import Configurator from './components/Experience'
 import { Suspense } from 'react';
 
 
@@ -16,7 +17,9 @@ function App() {
         <Suspense fallback={null}>
         <Experience/>
         </Suspense>
+        <Configurator/>
       </Canvas>
+      
     
   );
 }
