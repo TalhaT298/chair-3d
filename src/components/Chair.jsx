@@ -65,7 +65,7 @@ const Chair =(props) =>{
         geometry={nodes.Legs1.geometry}
         material={materials.Legs}
         visible={legs === 1}
-        castShadow
+        
       />
       <mesh
         geometry={nodes.Legs2.geometry}
