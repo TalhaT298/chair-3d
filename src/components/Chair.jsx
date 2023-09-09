@@ -14,37 +14,37 @@ const Chair =(props) =>{
   const { material, legs, chairColor, cushionColor } = useCustomization();
   const { nodes, materials } = useGLTF('./models/chair.gltf')
   const leatherTextureProps = useTexture({
-    map:  "./textures/leather/Leather_008_Normal.jpg",
+    // map:  "./textures/leather/Leather_008_Normal.jpg",
     normalMap: "./textures/leather/Leather_008_Normal.jpg",
     roughnessMap: "./textures/leather/Leather_008_Roughness.jpg",
     aoMap: "./textures/leather/Leather_008_Ambient Occlusion.jpg",
   });
   const fabricTextureProps = useTexture({
-    map: "./textures/fabric/Fabric_Knitted_006_basecolor.jpg",
+    // map: "./textures/fabric/Fabric_Knitted_006_basecolor.jpg",
     normalMap: "./textures/fabric/Fabric_Knitted_006_normal.jpg",
     roughnessMap: "./textures/fabric/Fabric_Knitted_006_roughness.jpg",
     aoMap: "./textures/fabric/Fabric_Knitted_006_ambientOcclusion.jpg",
   });
 
-  leatherTextureProps.map.repeat.set(3,3);
+  // leatherTextureProps.map.repeat.set(3,3);
   leatherTextureProps.normalMap.repeat.set(3,3);
   leatherTextureProps.roughnessMap.repeat.set(3,3);
   leatherTextureProps.aoMap.repeat.set(3,3);
 
-  fabricTextureProps.map.repeat.set(3,3);
+  // fabricTextureProps.map.repeat.set(3,3);
 
-  leatherTextureProps.map.wrapS = leatherTextureProps.map.wrapT =
+  // leatherTextureProps.map.wrapS = leatherTextureProps.map.wrapT =
   leatherTextureProps.normalMap.wrapS = leatherTextureProps.normalMap.wrapT =
   leatherTextureProps.roughnessMap.wrapS = leatherTextureProps.roughnessMap.wrapT =
   leatherTextureProps.aoMap.wrapS = leatherTextureProps.aoMap.wrapT =
   THREE.MirroredRepeatWrapping;
 
-   fabricTextureProps.map.repeat.set(3, 3);
+  //  fabricTextureProps.map.repeat.set(3, 3);
    fabricTextureProps.normalMap.repeat.set(3, 3);
    fabricTextureProps.roughnessMap.repeat.set(3, 3);
    fabricTextureProps.aoMap.repeat.set(3, 3);
-   fabricTextureProps.map.wrapS = fabricTextureProps.map.wrapT =
-     THREE.RepeatWrapping;
+  //  fabricTextureProps.map.wrapS = fabricTextureProps.map.wrapT =
+  //    THREE.RepeatWrapping;
    fabricTextureProps.normalMap.wrapS = fabricTextureProps.normalMap.wrapT =
      THREE.RepeatWrapping;
    fabricTextureProps.roughnessMap.wrapS =
@@ -56,11 +56,11 @@ const Chair =(props) =>{
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Chair.geometry} >
-        <meshStandardMaterial {...(material === "leather"? leatherTextureProps: fabricTextureProps)}/>
+        <meshStandardMaterial {...(material === "leather"? leatherTextureProps: fabricTextureProps)} color={chairColor.color}/>
         </mesh>
       <mesh geometry={nodes.Cushion.geometry} material={materials.Cushion} position={[0, 0.064, 0.045]} >
       </mesh>
-      <meshStandardMaterial {...fabricTextureProps}/>
+      <meshStandardMaterial {...fabricTextureProps} color={cushionColor.color}/>
       <mesh
         geometry={nodes.Legs1.geometry}
         material={materials.Legs}

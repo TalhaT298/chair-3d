@@ -64,3 +64,12 @@ body{
   align-items: center;
   transition: all 0.4s;
 }
+.item__dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  border: solid 2px #999999;
+}
+.item.item--active .item__dot {
+  border: solid 2px white;
+}
