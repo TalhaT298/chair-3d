@@ -3,7 +3,7 @@ import React from "react";
 import { useCustomization } from "../contexts/Customization";
 
 const Configurator = () => {
-  const { material, setMaterial } = useCustomization(); // Call the hook inside the component
+  const { material, setMaterial,legs,setLegs, } = useCustomization(); // Call the hook inside the component
 
   console.log("material", material);
 
@@ -31,14 +31,14 @@ const Configurator = () => {
         <div className="configurator__section__title">Legs</div>
         <div className="configurator__section__values">
           <div
-            className={`item ${material === "leather" ? "item--active" : ""}`}
-            onClick={() => setMaterial("leather")}
+            className={`item ${legs === 1 ? "item--active" : ""}`}
+            onClick={() => setLegs(1)}
           >
             <div className="item_label">Modern</div>
           </div>
           <div
-            className={`item ${material === "fabric" ? "item--active" : ""}`}
-            onClick={() => setMaterial("fabric")}
+             className={`item ${legs === 2 ? "item--active" : ""}`}
+             onClick={() => setLegs(2)}
           >
             <div className="item_label">Classic</div>
           </div>

@@ -11,7 +11,7 @@ import * as THREE from "three"
 import { useCustomization } from '../contexts/Customization'
 
 const Chair =(props) =>{
-  const {material}=useCustomization
+  const { material, legs, chairColor, cushionColor } = useCustomization();
   const { nodes, materials } = useGLTF('./models/chair.gltf')
   const leatherTextureProps = useTexture({
     map:  "./textures/leather/Leather_008_Normal.jpg",
@@ -61,8 +61,17 @@ const Chair =(props) =>{
       <mesh geometry={nodes.Cushion.geometry} material={materials.Cushion} position={[0, 0.064, 0.045]} >
       </mesh>
       <meshStandardMaterial {...fabricTextureProps}/>
-      <mesh geometry={nodes.Legs1.geometry} material={materials.Legs} />
-      <mesh geometry={nodes.Legs2.geometry} material={materials.Legs} visible={false}/>
+      <mesh
+        geometry={nodes.Legs1.geometry}
+        material={materials.Legs}
+        visible={legs === 1}
+        castShadow
+      />
+      <mesh
+        geometry={nodes.Legs2.geometry}
+        material={materials.Legs}
+        visible={legs === 2}
+      />
     </group>
   )
 }
